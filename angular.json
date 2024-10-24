@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "08_authentification": {
+    "RecipeApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/08_authentification",
+            "outputPath": "dist/RecipeApp",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "08_authentification:build:production"
+              "buildTarget": "RecipeApp:build:production"
             },
             "development": {
-              "buildTarget": "08_authentification:build:development"
+              "buildTarget": "RecipeApp:build:development"
             }
           },
           "defaultConfiguration": "development"

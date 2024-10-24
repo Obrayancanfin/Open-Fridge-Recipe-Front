@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the '08_authentification' title`, () => {
+  it(`should have the 'RecipeApp' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('08_authentification');
+    expect(app.title).toEqual('RecipeApp');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, 08_authentification');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, RecipeApp');
   });
 });
