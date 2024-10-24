@@ -1,19 +1,30 @@
 <form [formGroup]="form" (ngSubmit)="handleSubmit()">
     <div>
-        <label>Prénom</label>
+
+        <label>First name:</label>
         <input type="text" formControlName="firstname">
+      <div class="text-red-400 text-sm" *ngIf="firstnameFormField?.dirty" >
+        <span class="block" [ngClass]="{'text-primary': firstnameFormField?.value?.match('.{3,}')}">At least 3 characters
+                            long.</span>
+      </div>
     </div>
     <div>
-        <label>nom</label>
+        <label>Last name:</label>
         <input type="text" formControlName="lastname">
+      <div class="text-red-400 text-sm" *ngIf="lastnameFormField?.dirty" >
+        <span class="block" [ngClass]="{'text-primary': lastnameFormField?.value?.match('.{3,}')}">At least 3 characters
+                            long.</span>
+      </div>
     </div>
     <div>
-        <label>Email</label>
+        <label>Email:</label>
         <input type="text" formControlName="email">
     </div>
     <div>
-        <label>Password</label>
+        <label>Password:</label>
         <input type="password" formControlName="password">
     </div>
     <button>Enregister</button>
 </form>
+
+
