@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {StyleComponent} from '../../utils/style/style.component';
 
 @Component({
   selector: 'app-admin',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.css'
 })
 export class AdminComponent {
+  deepJungleGreenBg: string=StyleComponent.deepJungleGreenBackground();
+  deepJungleGreenText: string=StyleComponent.deepJungleGreenText();
 
 }

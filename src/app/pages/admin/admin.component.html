@@ -1,1 +1,57 @@
-<p>admin works!</p>
+<div class="{{deepJungleGreenBg}} flex items-center justify-center text-white ">
+  <h1 class="text-4xl pt-8">Admin</h1>
+</div>
+<div class="{{deepJungleGreenBg}} ">
+  <p class="text-white mx-32 py-8 text-xl " >The  admin  page  offer  a  powerful  dashboard  for managing all aspects of the recipe platform. Easily create
+  and customize new recipes , add or modify ingredients, and efficiently manage user accounts. With intuitive tools
+  at your fingertips, streamline content updates and maintien a seemless experience for all users.</p>
+</div>
+<div class="grid grid-cols-2 w-full">
+  <div class="">
+  <form class="max-w-sm mx-auto">
+  <h1 class=" flex items-center justify-center py-8 text-3xl {{deepJungleGreenText}} "> Create a new recipe ▼</h1>
+    <div class="mb-5">
+      <label for="name" class="block mb-2 text-sm font-medium {{deepJungleGreenText}}">Name</label>
+      <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Name of dish" required />
+    </div>
+    <div class="mb-5">
+      <label for="description" class="block mb-2 text-sm font-medium {{deepJungleGreenText}}">Description</label>
+      <input type="text" id="description" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="descrition of the dish" required />
+    </div>
+    <div class="mb-5">
+      <label for="image" class="block mb-2 text-sm font-medium {{deepJungleGreenText}}">Image</label>
+      <input type="text" id="image" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="image for the dish" required />
+    </div>
+    <div class="grid grid-cols-3 gap-3">
+      <div>
+        <label for="CookingTime" class="block mb-2 text-sm font-medium {{deepJungleGreenText}}">Cooking Time</label>
+        <input type="text" id="CookingTime" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" required />
+      </div>
+      <div>
+        <label for="Difficulty" class="block mb-2 text-sm font-medium {{deepJungleGreenText}}">Difficulty</label>
+        <select name="difficulty" id="Difficulty" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" >
+          <option value="Easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="Hard">Hard</option>
+          <option value="RAmsay">Ramsay</option>
+        </select>
+      </div>
+      <div>
+        <label for="Price" class="block mb-2 text-sm font-medium {{deepJungleGreenText}}">Price</label>
+        <select name="difficulty" id="Price" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" >
+          <option value="Cheep">Cheep</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Expensive">Expensive</option>
+        </select>
+      </div>
+    </div>
+  </form>
+  </div>
+  <div><img alt="plat" src="plat.png" class="block h-screen w-full"></div>
+</div>

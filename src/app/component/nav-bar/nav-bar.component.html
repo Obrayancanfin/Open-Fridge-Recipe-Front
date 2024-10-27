@@ -1,32 +1,33 @@
-<nav class="bg-white">
-  <div class="max-w-screen-xl shrink-0 flex flex-wrap items-center   pl-8">
-    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <span class="self-center text-7xl font-semibold whitespace-nowrap {{greenCSSTxt}}">OFR</span>
-    </a>
-    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+<nav class=" {{greenCSSBG}} xl:bg-white">
+  <div class="max-w-screen-xl shrink-0 flex flex-wrap items-center mr-0 pl-8">
+    <button data-collapse-toggle="navbar-default" type="button" class='{{buttonCss}}' (click)="sethide()" >
       <span class="sr-only">Open main menu</span>
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
       </svg>
     </button>
-    <div class="hidden w-full md:block md:w-auto ml-5 mt-7" id="navbar-default">
-      <ul class="font-medium flex flex-col md:p-0 pt-52 smt-50 text-3xl rounded-lg  md:flex-row md:space-x-20 rtl:space-x-reverse md:mt-0 md:border-0  ">
+    <a routerLink="/" class="flex xl:pl-0  pl-[40%] space-x-3 rtl:space-x-reverse">
+      <span class=" flex items-center justify-center text-white xl:text-[#256f6e]  self-center md:text-5xl text-xl font-semibold whitespace-nowrap visible item-center xl:flex">OFR</span>
+    </a>
+    <div class=" {{hide}} w-full md:block md:w-auto ml-5 pt-6" id="navbar-default">
+      <ul class="font-medium flex flex-col md:p-0 pt-52  text-2xl rounded-lg xl:visible md:hidden xl:flex md:flex-row md:space-x-14 rtl:space-x-reverse md:mt-0 md:border-0 " aria-controls="navbar-default" aria-expanded="false">
         <li>
-          <a href="#" class="{{greenCSSTxt}} block py-7 px-3" aria-current="page">Home</a>
+          <a href="" class="{{greenCSSTxt}} block py-7 px-3" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="#" class="{{greenCSSTxt}} block py-7 px-3">Recipes</a>
+          <a href="/Recipe" class="{{greenCSSTxt}} block py-7 px-3">Recipes</a>
         </li>
         <li>
-          <a href="#" class="{{greenCSSTxt}} block py-7 px-3">Check your fridge</a>
+          <a href="/Check-your-fridge" class="{{greenCSSTxt}} block py-7 px-3">Check your fridge</a>
         </li>
         <li>
-          <a href="#" class="{{greenCSSTxt}} block py-7 px-3">Account</a>
+          <a href="/Account" class="{{greenCSSTxt}} block py-7 px-3">Account</a>
         </li>
         <li>
-          <a href="#" class="{{greenCSSTxt}} block py-7 px-3">Admin</a>
+          <a href="/Admin" class="{{greenCSSTxt}} block py-7 px-3">Admin</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
