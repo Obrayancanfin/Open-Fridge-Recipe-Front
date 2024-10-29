@@ -1,5 +1,5 @@
 <section class="mx-auto p-52">
-  <form>
+  <form [formGroup]="form" (ngSubmit)="handleSubmit()">
     <div>
         <label>Email</label>
         <input type="text" formControlName="email">

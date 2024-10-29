@@ -8,7 +8,7 @@ export const isLoggedGuard: CanActivateFn = (route, state) => {
   const token = authService.getToken()
   if(!token) {
     alert("Vous n'êtes pas autorisé à accéder à cette route")
-    router.navigate(['/Login'])
+    router.navigate(['/login'])
     return false
   }
   return true
