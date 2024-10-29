@@ -6,7 +6,7 @@
 </section>
 
 <section class="recipes-form">
-    <form [formGroup]="search_recipe_form" (ngSubmit)="submit_search()">
+    <form [formGroup]="search_recipe_form" class="mb-8" (ngSubmit)="submit_search()">
         <div>
             <h2 class="title">Recipes search</h2>
 
@@ -23,11 +23,13 @@
             <p>Select products with specific brands, categories, labels, origins of ingredients, manufacturing places etc.</p>
 
             <fieldset class="criterion-form" formGroupName="criteria">
-                <select class="input" id="criterion" name="criterion"  formControlName="criterion">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
+
+              <input list="brow" formGroupName="criterion">
+              <datalist id="brow">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+              </datalist>
 
                 <select class="input" id="contains" name="contains"  formControlName="contains">
                     <option value="contains">contains</option>
@@ -46,14 +48,13 @@
             <h2 class="title">Ingredients</h2>
             <p>select your dietary preferences and restrictions to refine your searches according to your criteria</p>
             <div class="ingredients-form">
-                <fieldset class="fieldset-checkbox"  formControlName="additives">
+                <fieldset class="fieldset-checkbox"  formGroupName="additives">
                     <legend class="check-box-title">Additives</legend>
-
-                    <div class="checkbox">
-                        <input type="radio" id="additives" name="additives" />
+                   <div class="checkbox">
+                        <input type="radio" id="WOadditives" name="additives" />
                         <label for="additives">Without</label>
 
-                        <input type="radio" id="additives" name="additives" />
+                        <input type="radio" id="Wadditives" name="additives" />
                         <label for="additives">With</label>
 
                         <input type="radio" id="additives" name="additives" />
@@ -61,14 +62,14 @@
                     </div>
                 </fieldset>
 
-                <fieldset class="fieldset-checkbox" formControlName="vegetarian">
+                <fieldset class="fieldset-checkbox" formGroupName="vegetarian">
                     <legend class="check-box-title">Vegetarian</legend>
 
                     <div class="checkbox">
-                        <input type="radio" id="vegetarian" name="vegetarian" />
+                        <input type="radio" id="WOvegetarian" name="vegetarian" />
                         <label for="vegetarian">Without</label>
 
-                        <input type="radio" id="vegetarian" name="vegetarian" />
+                        <input type="radio" id="Wvegetarian" name="vegetarian" />
                         <label for="vegetarian">With</label>
 
                         <input type="radio" id="vegetarian" name="vegetarian" />
@@ -76,14 +77,14 @@
                     </div>
                 </fieldset>
 
-                <fieldset class="fieldset-checkbox" formControlName="palmoil">
+                <fieldset class="fieldset-checkbox" formGroupName="palmoil">
                     <legend class="check-box-title">Palm oil</legend>
 
                     <div class="checkbox">
-                        <input type="radio" id="palm-oil" name="palm-oil" />
+                        <input type="radio" id="WOpalm-oil" name="palm-oil" />
                         <label for="palm-oil">Without</label>
 
-                        <input type="radio" id="palm-oil" name="palm-oil" />
+                        <input type="radio" id="Wpalm-oil" name="palm-oil" />
                         <label for="palm-oil">With</label>
 
                         <input type="radio" id="palm-oil" name="palm-oil" />
@@ -91,14 +92,14 @@
                     </div>
                 </fieldset>
 
-                <fieldset class="fieldset-checkbox" formControlName="gluten">
+                <fieldset class="fieldset-checkbox" formGroupName="gluten">
                     <legend class="check-box-title">Gluten</legend>
 
                     <div class="checkbox">
-                        <input type="radio" id="gluten" name="gluten" />
+                        <input type="radio" id="WOgluten" name="gluten" />
                         <label for="gluten">Without</label>
 
-                        <input type="radio" id="gluten" name="gluten" />
+                        <input type="radio" id="Wgluten" name="gluten" />
                         <label for="gluten">With</label>
 
                         <input type="radio" id="gluten" name="gluten" />
@@ -113,7 +114,6 @@
         </div>
     </form>
 </section>
-
 <section class="recipes-result">
 
  @for (recipe of recipes; track recipe; let i = $index){

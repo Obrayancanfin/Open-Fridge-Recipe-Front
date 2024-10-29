@@ -1,6 +1,7 @@
-import {Component, Input} from '@angular/core';
-import { RecipeCardComponent } from "../../component/recipe-card/recipe-card.component";
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {Component, Inject, Input} from '@angular/core';
+
+import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {RecipeCardComponent} from '../../component/recipe-card/recipe-card.component';
 
 type Recipe = {
   img: string
@@ -12,7 +13,7 @@ type Recipe = {
 @Component({
   selector: 'app-recipes',
   standalone: true,
-  imports: [RecipeCardComponent, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RecipeCardComponent],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css'
 })
@@ -79,32 +80,25 @@ export class RecipesComponent {
     reviewNumber: 357
     }
   ]
+  search_recipe_form:FormGroup;
+  constructor(@Inject(FormBuilder) fb: FormBuilder) {
+  this.search_recipe_form=fb.group({
+    criteria:fb.group({
 
-  search_recipe_form: FormGroup = new FormGroup(
-    {
-      search: new FormControl(""),
-
-      criteria: new FormArray([
-        new FormGroup({
-                criterion: new FormControl(''),
-                contains: new FormControl(''),
-                value: new FormControl(''),
-          })
-      ]),
-
-      additives: new FormControl(""),
-      vegetarian: new FormControl(""),
-      palmoil: new FormControl(""),
-      gluten: new FormControl(""),
-
-    },
-
-  )
-
+      criterion: new FormControl(''),
+      contains: new FormControl(''),
+      value: new FormControl(''),
+  }),
+    search: new FormControl(""),
+    additives: new FormControl(""),
+    vegetarian: new FormControl(""),
+    palmoil: new FormControl(""),
+    gluten: new FormControl("")})
+  }
 
 
 
   submit_search(){
-
+      console.log(this.search_recipe_form)
   }
 }
