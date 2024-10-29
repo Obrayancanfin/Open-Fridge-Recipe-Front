@@ -1,1 +1,125 @@
-<p>recipes works!</p>
+<section class="description-block">
+    <div class="description-block-bg">
+        <h2 class="description-block-title">Recipes</h2>
+        <p class="description-block-text">The admin page offers a powerful dashboard for managing all aspects of the recipe platform. Easily create and customize new recipes, add or modify ingredients, and efficiently manage user accounts. With intuitive tools at your fingertips, streamline content updates and maintain a seamless experience for all users.</p>
+    </div>
+</section>
+
+<section class="recipes-form">
+    <form [formGroup]="search_recipe_form" (ngSubmit)="submit_search()">
+        <div>
+            <h2 class="title">Recipes search</h2>
+
+            <label for="search">Search for words present in the product name, generic name, brands, categories, origins and labels</label>
+            <div>
+                <input class="search-input" type="text" id="search" formControlName="search" placeholder="Pasta di formaggio...">
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div>
+            <h2 class="title">Criteria</h2>
+            <p>Select products with specific brands, categories, labels, origins of ingredients, manufacturing places etc.</p>
+
+            <fieldset class="criterion-form" formGroupName="criteria">
+                <select class="input" id="criterion" name="criterion"  formControlName="criterion">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <select class="input" id="contains" name="contains"  formControlName="contains">
+                    <option value="contains">contains</option>
+                    <option value="contains">not contains</option>
+                </select>
+
+
+                <input class="input" type="text" id="value" formControlName="value" placeholder="Value">
+            </fieldset>
+
+        </div>
+
+        <div class="separator"></div>
+
+        <div>
+            <h2 class="title">Ingredients</h2>
+            <p>select your dietary preferences and restrictions to refine your searches according to your criteria</p>
+            <div class="ingredients-form">
+                <fieldset class="fieldset-checkbox"  formControlName="additives">
+                    <legend class="check-box-title">Additives</legend>
+
+                    <div class="checkbox">
+                        <input type="radio" id="additives" name="additives" />
+                        <label for="additives">Without</label>
+
+                        <input type="radio" id="additives" name="additives" />
+                        <label for="additives">With</label>
+
+                        <input type="radio" id="additives" name="additives" />
+                        <label for="additives">Indifferent</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="fieldset-checkbox" formControlName="vegetarian">
+                    <legend class="check-box-title">Vegetarian</legend>
+
+                    <div class="checkbox">
+                        <input type="radio" id="vegetarian" name="vegetarian" />
+                        <label for="vegetarian">Without</label>
+
+                        <input type="radio" id="vegetarian" name="vegetarian" />
+                        <label for="vegetarian">With</label>
+
+                        <input type="radio" id="vegetarian" name="vegetarian" />
+                        <label for="vegetarian">Indifferent</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="fieldset-checkbox" formControlName="palmoil">
+                    <legend class="check-box-title">Palm oil</legend>
+
+                    <div class="checkbox">
+                        <input type="radio" id="palm-oil" name="palm-oil" />
+                        <label for="palm-oil">Without</label>
+
+                        <input type="radio" id="palm-oil" name="palm-oil" />
+                        <label for="palm-oil">With</label>
+
+                        <input type="radio" id="palm-oil" name="palm-oil" />
+                        <label for="palm-oil">Indifferent</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="fieldset-checkbox" formControlName="gluten">
+                    <legend class="check-box-title">Gluten</legend>
+
+                    <div class="checkbox">
+                        <input type="radio" id="gluten" name="gluten" />
+                        <label for="gluten">Without</label>
+
+                        <input type="radio" id="gluten" name="gluten" />
+                        <label for="gluten">With</label>
+
+                        <input type="radio" id="gluten" name="gluten" />
+                        <label for="gluten">Indifferent</label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="button-title">Search</button>
+        </div>
+    </form>
+</section>
+
+<section class="recipes-result">
+
+ @for (recipe of recipes; track recipe; let i = $index){
+    <app-recipe-card [recipe]="recipe"/>
+    } @empty {
+    <p>Oops ! There's no recipe yet !</p>
+    }
+
+</section>

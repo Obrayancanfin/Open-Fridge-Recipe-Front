@@ -24,6 +24,7 @@ export class LoginComponent {
   handleSubmit() {
 
     const user = this.form.value as Pick<User, "email" | "password">
+    console.log(user);
     this.authService.login(user).subscribe({
       next: (res) => {
         if(res){
@@ -32,4 +33,6 @@ export class LoginComponent {
       }
     })
   }
+
+  protected readonly FormGroup = FormGroup;
 }

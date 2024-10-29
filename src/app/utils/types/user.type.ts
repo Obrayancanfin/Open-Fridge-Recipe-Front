@@ -1,6 +1,7 @@
 export type User = {
-    firstname: string
     lastname: string
+    name: string
     email: string
     password: string
+    isAdmin: boolean
 }

@@ -7,14 +7,16 @@ import {RecipesComponent} from './pages/recipes/recipes.component';
 import {AdminComponent} from './pages/admin/admin.component';
 import {CheckYourFridgeComponent} from './pages/check-your-fridge/check-your-fridge.component';
 import {AccountComponent} from './pages/account/account.component';
+import {TermsConditionsComponent} from './pages/terms-conditions/terms-conditions.component';
 
 export const routes: Routes = [
-    {path: "", component: HomeComponent,/* canActivate: [isLoggedGuard]**/},
-    {path: "Recipe", component: RecipesComponent},
-    {path: "Check-your-fridge", component: CheckYourFridgeComponent},
-    {path: "Admin", component: AdminComponent},
-    {path: "Account", component: AccountComponent},
-    {path: "Register", component: RegisterComponent},
-    {path: "Login", component: LoginComponent},
+    {path: "", component: HomeComponent},
+    {path: "recipe", component: RecipesComponent},
+    {path: "check-your-fridge", component: CheckYourFridgeComponent},
+    {path: "admin", component: AdminComponent,/*canActivate: [isLoggedGuard]**/ },
+    {path: "account", component: AccountComponent},
+    {path: "register", component: RegisterComponent},
+    {path: "login", component: LoginComponent},
+    {path:"terms" , component: TermsConditionsComponent}
 
 ];

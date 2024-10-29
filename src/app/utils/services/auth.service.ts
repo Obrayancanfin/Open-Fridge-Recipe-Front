@@ -7,7 +7,7 @@ import { catchError, Observable, of, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl: string = 'http://localhost:3000'
+  apiUrl: string = 'http://localhost:8080'
 
   constructor(private http: HttpClient) { }
 

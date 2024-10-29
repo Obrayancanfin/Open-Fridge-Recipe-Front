@@ -10,6 +10,6 @@ export const isLoggedGuard: CanActivateFn = (route, state) => {
     alert("Vous n'êtes pas autorisé à accéder à cette route")
     router.navigate(['/login'])
     return false
-  } 
+  }
   return true
 };
