@@ -9,7 +9,7 @@ import {CheckYourFridgeComponent} from './pages/check-your-fridge/check-your-fri
 import {AccountComponent} from './pages/account/account.component';
 
 export const routes: Routes = [
-    {path: "", component: HomeComponent,/* canActivate: [isLoggedGuard]**/},
+    {path: "", component: HomeComponent,canActivate: [isLoggedGuard]},
     {path: "Recipe", component: RecipesComponent},
     {path: "Check-your-fridge", component: CheckYourFridgeComponent},
     {path: "Admin", component: AdminComponent},
