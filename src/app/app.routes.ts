@@ -9,6 +9,7 @@ import {CheckYourFridgeComponent} from './pages/check-your-fridge/check-your-fri
 import {AccountComponent} from './pages/account/account.component';
 import {TermsConditionsComponent} from './pages/terms-conditions/terms-conditions.component';
 import {HomeComponent} from './pages/home/home.component';
+import {RecipeComponent} from './pages/recipe/recipe.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: "account", component: AccountComponent},
     {path: "register", component: RegisterComponent},
     {path: "login", component: LoginComponent},
-    {path:"terms" , component: TermsConditionsComponent}
+    {path:"terms" , component: TermsConditionsComponent},
+    {path: "recipe/details", component: RecipeComponent},
 
 ];
