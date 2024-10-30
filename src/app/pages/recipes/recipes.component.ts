@@ -1,7 +1,9 @@
-import {Component, Inject, Input} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 
 import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {RecipeCardComponent} from '../../component/recipe-card/recipe-card.component';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 type Recipe = {
   img: string
@@ -17,11 +19,9 @@ type Recipe = {
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.css'
 })
-export class RecipesComponent {
+export class RecipesComponent implements OnInit {
 
-  get recipes(): Recipe[] {
-    return this._recipes;
-  }
+  protected recipes: string="";
 
   recipe : Recipe = {
     img: "",
@@ -30,7 +30,7 @@ export class RecipesComponent {
     reviewNumber: 0
   }
 
-  private _recipes: Recipe[] = [
+  private _recipes1: Recipe[] = [
     {
       img: "https://www.foodandwine.com/thmb/fjNakOY7IcuvZac1hR3JcSo7vzI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/FAW-recipes-pasta-sausage-basil-and-mustard-hero-06-cfd1c0a2989e474ea7e574a38182bbee.jpg",
     name: "Pasta with Sausage, Basil, and Mustard",
@@ -81,7 +81,7 @@ export class RecipesComponent {
     }
   ]
   search_recipe_form:FormGroup;
-  constructor(@Inject(FormBuilder) fb: FormBuilder) {
+  constructor(@Inject(FormBuilder) fb: FormBuilder , private http: HttpClient) {
   this.search_recipe_form=fb.group({
     criteria:fb.group({
 
@@ -101,4 +101,22 @@ export class RecipesComponent {
   submit_search(){
       console.log(this.search_recipe_form)
   }
+
+  private url: string = '/api/recipe';
+  showRecipeModal(): Observable<string> {
+    return this.http.get<string>(this.url);
+  }
+
+
+  ngOnInit(): void {
+
+    this.showRecipeModal().subscribe((data: string) => {
+      // Mise à jour du tableau avec les données reçues.
+      this.recipes = data
+      console.log(this.recipes);
+    })
+
+  }
+
 }
+

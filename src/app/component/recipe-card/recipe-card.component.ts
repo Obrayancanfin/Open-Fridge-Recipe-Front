@@ -1,17 +1,25 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-class Recipe {
-  img: string
-  name: string;
-  grade: number;
-  reviewNumber: number;
+interface Ingredient {
+  code:string
+  name: string
+  quantity: string
+  calories: number
+  tags: Tag[];
+}
 
-  constructor(img: string, name: string, grade: number, reviewNumber: number){
-    this.img = img,
-    this.name = name,
-    this.grade = grade,
-    this.reviewNumber = reviewNumber;
-  }
+interface Tag {
+  id: string;
+  name: string;
+}
+
+interface Recipe {
+  caloricNb: number;
+  cutleryNb: string;
+  id: string;
+  ingredients: Ingredient[];
+  name: string;
+  tags: Tag[];
 }
 
 @Component({

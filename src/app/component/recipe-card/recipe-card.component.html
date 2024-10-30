@@ -2,7 +2,7 @@
     <li class="container">
         <span>
             <div class="image-container">
-                <img class="image" [src]="recipe.img" alt="recipe image">
+                <img class="image" src="WIP-logo.png" alt="recipe image">
             </div>
 
             <div class="title">
@@ -10,9 +10,14 @@
             </div>
 
             <div class="review">
-                <small>{{recipe.grade}}/5</small>
-                <small>{{recipe.reviewNumber}} reviews</small>
+                <small>{{recipe.caloricNb}}</small>
+                <small>{{recipe.cutleryNb}} </small>
+              <table>
+                @for (ingredient of recipe.ingredients ;track recipe; let i = $index){
+                <tr> {{ingredient}}</tr>
+              }
+              </table>
             </div>
-        </span> 
+        </span>
     </li>
 </ul>

@@ -1,0 +1,92 @@
+<section class="description-block">
+    <div class="description-block-bg">
+        <h2 class="description-block-title">{{recipe.name}}</h2>
+    </div>
+</section>
+
+<img class="img" [src]="recipe.img">
+
+<section class="recipe-container">
+
+    <p class="description">{{recipe.description}}</p>
+
+    <div class="tags">
+        @for (tag of recipe.tag; track tag; let i = $index){
+            <p class="tag-box">{{tag}}</p>
+        }
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="info-container">
+        <div class="info-box">
+            <p>Cooking time</p>
+            <img class="info-img" src="https://static-00.iconduck.com/assets.00/timer-icon-2048x2048-l8if4eql.png">
+            <p>{{recipe.cookingTime}} min</p>
+        </div>
+
+        <div class="info-box">
+            <p>Difficulty</p>
+            <img class="info-img" src="https://cdn-icons-png.flaticon.com/512/113/113339.png">
+            <p>{{recipe.difficulty}}</p>
+        </div>
+
+        <div class="info-box">
+            <p>Price</p>
+            <img class="info-img" src="https://icons.iconarchive.com/icons/iconsmind/outline/512/Coins-icon.png">
+            <p>{{recipe.price}}</p>
+        </div>
+
+        <div class="info-box">
+            <p>Calory</p>
+            <img class="info-img" src="https://cdn-icons-png.flaticon.com/512/4812/4812905.png">
+            <p>{{recipe.caloryNb}} kcal</p>
+        </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <h2 class="title">Ingredients</h2>
+
+    <div class="clutery-number">
+        <p>Clutery number :</p>
+        <input class="clutery-input" type="number" placeholder="2">
+    </div>
+
+    <div class="ingredients-list">
+        @for (ingredient of recipe.ingredients; track ingredient; let i = $index){
+            <div class="ingredient-box">
+                <p>{{ingredient}}</p>
+            </div>
+        }
+    </div>
+
+    <div class="separator"></div>
+
+    <h2 class="title">Recipe</h2>
+
+    <div class="recipe">
+        @for (step of recipe.steps; track step; let i = $index){
+            <p class="step-title">STEP {{i+1}} :</p>
+            <p class="step-box">{{step}}</p>
+        }
+    </div>
+
+    <div class="separator"></div>
+
+    <h2 class="title">Details</h2>
+
+    <div class="details">
+        <p><strong>Name of the recipe : </strong>{{recipe.name}}</p>
+        <p><strong>Cooking time : </strong>{{recipe.cookingTime}} min</p>
+        <p><strong>Difficulty : </strong>{{recipe.difficulty}}</p>
+        <p><strong>Price : </strong>{{recipe.price}}</p>
+        <p><strong>Calory : </strong>{{recipe.caloryNb}} kcal</p>
+    </div>
+
+    <div class="separator"></div>
+
+    <h2 class="title">Reviews</h2>
+
+
+</section>

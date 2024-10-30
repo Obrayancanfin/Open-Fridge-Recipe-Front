@@ -1,8 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {StyleComponent} from '../../utils/style/style.component';
 import {FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -11,12 +13,13 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   deepJungleGreenBg: string = StyleComponent.deepJungleGreenBackground();
   deepJungleGreenText: string = StyleComponent.deepJungleGreenText();
   stepsForm: FormGroup;
   contenteInput: string = '';
   isShown: boolean = true;
+  private recipes: string="";
 
 
   updateDisplay(event: Event): void {
@@ -24,8 +27,8 @@ export class AdminComponent {
     this.contenteInput = input.value
   }
 
-  constructor(private formBuilder: FormBuilder) {
-    console.log(this.contenteInput);
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+
     this.stepsForm = this.formBuilder.group({
       name: '',
       steps: this.formBuilder.array([]),
@@ -49,7 +52,6 @@ export class AdminComponent {
 
   removeSteps(i: number) {
     this.steps().removeAt(i);
-
   }
 
   onSubmit() {
@@ -65,4 +67,22 @@ export class AdminComponent {
   public hideChildModal(): void {
     this.isShown=!this.isShown;
   }
+
+
+
+  private url: string = '/api/recipe';
+  showRecipeModal(): Observable<string> {
+    return this.http.get<string>(this.url);
+  }
+
+
+  ngOnInit(): void {
+
+    this.showRecipeModal().subscribe((data: string) => {
+      data = JSON.parse(data);
+      console.log(data);
+    })
+
+  }
+
 }

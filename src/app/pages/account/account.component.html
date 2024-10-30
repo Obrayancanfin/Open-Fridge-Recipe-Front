@@ -1,1 +1,45 @@
-<p>account works!</p>
+<section class="description-block">
+    <div class="description-block-bg">
+        <h2 class="description-block-title">Manage your account</h2>
+    </div>
+</section>
+
+<h2 class="title">My account</h2>
+
+<section class="my-account">
+    
+    <div class="img-container">
+
+        <img class="profil-image" src="https://img.freepik.com/psd-gratuit/illustration-3d-personne-lunettes-soleil_23-2149436188.jpg">
+    
+    </div>
+
+    <div class="form-container">
+        <form [formGroup]="account_form" (ngSubmit)="submit()">
+            <label for="name">Name</label>
+            <div>
+                <input class="input" type="text" id="name" formControlName="name" [placeholder]="user.name">
+            </div>
+            <label for="surname">Surname</label>
+            <div>
+                <input class="input" type="text" id="surname" formControlName="surname"[placeholder]="user.surname">
+            </div>
+            <label for="email">Email address</label>
+            <div>
+                <input class="input" type="text" id="email" formControlName="email"[placeholder]="user.email">
+            </div>
+            <label for="password">Password</label>
+            <div>
+                <input class="input" type="text" id="password" formControlName="password"[placeholder]="user.password">
+            </div>
+            <button class="button">Validate modifications</button>
+        </form>
+    </div>
+
+</section>
+
+<section class="delete-container">
+
+    <button class="delete-button">Delete your account</button>
+
+</section>

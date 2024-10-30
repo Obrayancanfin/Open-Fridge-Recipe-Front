@@ -1,0 +1,290 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header section */
+.header-section {
+    position: relative;
+    padding: 50px;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.background-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.intro-text {
+    width: 45%;
+    z-index: 1;
+}
+
+.intro-text h1 {
+    color: #2A2A2A;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    color: #4A4A4A;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.discover-button {
+    background-color: #005756;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.image-container {
+    width: 45%;
+    z-index: 1;
+    text-align: right;
+}
+
+.salad-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+/* Recipes section */
+.recipes-section {
+    background-color: #f5f5f5;
+
+    text-align: center;
+}
+
+.recipes-header {
+    background-color: #005756;
+    padding: 15px;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.recipes-section h2 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.recipes-section > p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.search-bar label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2A2A2A;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-card p {
+    padding: 15px;
+    margin: 0;
+}
+
+.recipe-card p:first-of-type {
+    font-weight: bold;
+    color: #2A2A2A;
+}
+
+.discover-all-recipes {
+    background-color: #D6C46B;
+    color: #2A2A2A;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 968px) {
+    .recipes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text, .image-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .image-container {
+        text-align: center;
+    }
+
+    .background-svg {
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-section {
+        padding: 30px 20px;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+}
+.reviews-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  .reviews-section h2 {
+    background-color: #005756;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .review {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+  }
+
+  nav {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* Augmenté pour plus d'espace */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  nav li {
+    margin: 0 15px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  nav a:first-child {
+    font-size: 20px;
+    color: #005756;
+  }
+
+  footer {
+    background-color: #005756;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .social-media {
+    margin-bottom: 20px;
+  }
+
+  .social-media a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  footer li {
+    margin: 5px;
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
