@@ -4,6 +4,7 @@ import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Val
 import {RecipeCardComponent} from '../../component/recipe-card/recipe-card.component';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {forEach} from 'json-server-auth';
 
 type Recipe = {
   img: string
@@ -22,13 +23,7 @@ type Recipe = {
 export class RecipesComponent implements OnInit {
 
   protected recipes: string="";
-
-  recipe : Recipe = {
-    img: "",
-    name: "",
-    grade: 0,
-    reviewNumber: 0
-  }
+  protected listOfRecipes:any[]=[];
 
   private _recipes1: Recipe[] = [
     {
@@ -80,11 +75,11 @@ export class RecipesComponent implements OnInit {
     reviewNumber: 357
     }
   ]
+
   search_recipe_form:FormGroup;
   constructor(@Inject(FormBuilder) fb: FormBuilder , private http: HttpClient) {
   this.search_recipe_form=fb.group({
     criteria:fb.group({
-
       criterion: new FormControl(''),
       contains: new FormControl(''),
       value: new FormControl(''),
@@ -107,16 +102,15 @@ export class RecipesComponent implements OnInit {
     return this.http.get<string>(this.url);
   }
 
-
   ngOnInit(): void {
-
     this.showRecipeModal().subscribe((data: string) => {
-      // Mise à jour du tableau avec les données reçues.
-      this.recipes = data
-      console.log(this.recipes);
+
+      this.recipes = data;
+      for (const datum of data) {
+          this.listOfRecipes.push(datum)
+      }
     })
-
+    console.log(this.listOfRecipes)
   }
-
 }
 

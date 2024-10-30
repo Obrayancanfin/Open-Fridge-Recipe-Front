@@ -13,7 +13,7 @@ import {Observable} from 'rxjs';
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
   deepJungleGreenBg: string = StyleComponent.deepJungleGreenBackground();
   deepJungleGreenText: string = StyleComponent.deepJungleGreenText();
   stepsForm: FormGroup;
@@ -66,23 +66,6 @@ export class AdminComponent implements OnInit {
 
   public hideChildModal(): void {
     this.isShown=!this.isShown;
-  }
-
-
-
-  private url: string = '/api/recipe';
-  showRecipeModal(): Observable<string> {
-    return this.http.get<string>(this.url);
-  }
-
-
-  ngOnInit(): void {
-
-    this.showRecipeModal().subscribe((data: string) => {
-      data = JSON.parse(data);
-      console.log(data);
-    })
-
   }
 
 }
