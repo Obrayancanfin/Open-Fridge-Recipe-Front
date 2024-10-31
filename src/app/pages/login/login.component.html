@@ -1,22 +1,15 @@
-<section class="container">
-  <h2 class="title">Login</h2>
+<section class="mx-auto p-52">
   <form [formGroup]="form" (ngSubmit)="handleSubmit()">
     <div>
-      <label class="label"><strong>Email</strong></label>
-      <input class="input" type="text" formControlName="email">
+        <label>Email</label>
+        <input type="text" formControlName="email">
     </div>
     <div>
-      <label class="label"><strong>Password</strong></label>
-      <input class="input" type="password" formControlName="password">
-    </div>
-    <div class="button-container">
-      <button class="button">Enregister</button>
+        <label>Password</label>
+        <input type="password" formControlName="password">
     </div>
 
-
-  </form>
-  <small class="link">
-    <a href="register" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Don't have an account yet ? Go to registration !</a>
-  </small>
+    <button>Enregister</button>
+</form>
 
 </section>
