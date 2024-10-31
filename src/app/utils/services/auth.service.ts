@@ -7,12 +7,12 @@ import { catchError, Observable, of, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl: string = 'http://localhost:8080'
+  apiUrl: string = 'http://localhost:8080/api/'
 
   constructor(private http: HttpClient) { }
 
   register(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl + '/register', user).pipe(
+    return this.http.post<User>(this.apiUrl + 'users/register', user).pipe(
       catchError((error) => {
         alert(error.message)
         return of()

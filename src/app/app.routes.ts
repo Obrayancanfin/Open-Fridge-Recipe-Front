@@ -15,7 +15,7 @@ export const routes: Routes = [
     {path: "", component: HomeComponent},
     {path: "recipe", component: RecipesComponent},
     {path: "check-your-fridge", component: CheckYourFridgeComponent},
-    {path: "admin", component: AdminComponent,/*canActivate: [isLoggedGuard]**/ },
+    {path: "admin", component: AdminComponent,canActivate: [isLoggedGuard] },
     {path: "account", component: AccountComponent},
     {path: "register", component: RegisterComponent},
     {path: "login", component: LoginComponent},

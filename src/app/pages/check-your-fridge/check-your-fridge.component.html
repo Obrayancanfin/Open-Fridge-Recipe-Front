@@ -1,1 +1,12 @@
-<p>check-your-fridge works!</p>
+<div class="{{deepJungleGreenBg}} ">
+    <p class="text-white mx-32 py-8 text-xl " >Discover a smarter way to cook with our recipe generator!
+      Simply enter the ingredients you have on hand, and our platform will create delicious meal ideas tailored to what’s in your fridge. Say goodbye to food waste and hello to quick, creative, and flavorful dishes every day.</p>
+  </div>
+<div>
+  <h1 class="{{deepJungleGreenText}} flex items-center justify-center text-2xl font-bold">Your Ingredient</h1>
+<span class="{{deepJungleGreenText}} flex items-center pl-5 ">Add ingredients <img class="flex items-center justify-center pl-2" src="icons8-plus.svg" (click)="addIngredient()" alt="plus"></span>
+</div>
+<div id="ingredientFridge" class="pl-10">
+
+  {{contentFridge}}
+</div>

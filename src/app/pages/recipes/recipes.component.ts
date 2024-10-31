@@ -1,10 +1,10 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 
-import {FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {RecipeCardComponent} from '../../component/recipe-card/recipe-card.component';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {forEach} from 'json-server-auth';
+
 
 type Recipe = {
   img: string
@@ -17,7 +17,7 @@ type Recipe = {
   selector: 'app-recipes',
   standalone: true,
   imports: [ReactiveFormsModule, RecipeCardComponent],
-  templateUrl: './recipes.component.html',
+  templateUrl:'./recipes.component.html',
   styleUrl: './recipes.component.css'
 })
 export class RecipesComponent implements OnInit {
@@ -97,7 +97,7 @@ export class RecipesComponent implements OnInit {
       console.log(this.search_recipe_form)
   }
 
-  private url: string = '/api/recipe';
+  private url: string = '/api/users';
   showRecipeModal(): Observable<string> {
     return this.http.get<string>(this.url);
   }
