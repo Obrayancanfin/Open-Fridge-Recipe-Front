@@ -12,14 +12,14 @@ import {HomeComponent} from './pages/home/home.component';
 import {RecipeComponent} from './pages/recipe/recipe.component';
 
 export const routes: Routes = [
-    {path: "", component: HomeComponent},
-    {path: "recipe", component: RecipesComponent},
-    {path: "check-your-fridge", component: CheckYourFridgeComponent},
+    {path: "", component: HomeComponent , canActivate: [isLoggedGuard]},
+    {path: "recipe", component: RecipesComponent , canActivate: [isLoggedGuard]},
+    {path: "check-your-fridge", component: CheckYourFridgeComponent , canActivate: [isLoggedGuard]},
     {path: "admin", component: AdminComponent,canActivate: [isLoggedGuard] },
-    {path: "account", component: AccountComponent},
+    {path: "account", component: AccountComponent, canActivate: [isLoggedGuard]},
     {path: "register", component: RegisterComponent},
     {path: "login", component: LoginComponent},
     {path:"terms" , component: TermsConditionsComponent},
-    {path: "recipe/details", component: RecipeComponent},
+    {path: "recipe/details", component: RecipeComponent, canActivate: [isLoggedGuard]},
 
 ];

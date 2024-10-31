@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {FormControl, FormGroup, isFormGroup, ReactiveFormsModule} from '@angular/forms';
 import { AuthService } from '../../utils/services/auth.service';
-import {Router, RouterLink} from '@angular/router';
+import {Router} from '@angular/router';
 import { User } from '../../utils/types/user.type';
 
 @Component({
@@ -13,8 +13,8 @@ import { User } from '../../utils/types/user.type';
 })
 export class RegisterComponent {
   form: FormGroup = new FormGroup({
-    lastname: new FormControl(""),
-    firstname: new FormControl(""),
+    name: new FormControl(""),
+    surname: new FormControl(""),
     email: new FormControl(""),
     password: new FormControl(""),
     isAdmin: new FormControl(false),
@@ -28,10 +28,14 @@ export class RegisterComponent {
     this.authService.register(user).subscribe({
       next: (res) => {
         if(res){
+          console.log(res)
+          localStorage.setItem("User", JSON.stringify(res))
           alert("Vous êtes bien enregistré !")
           this.router.navigate(["/login"])
         }
       }
     })
   }
+
+  protected readonly isFormGroup = isFormGroup;
 }

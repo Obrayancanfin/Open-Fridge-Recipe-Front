@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgForOf, ModalDirective],
+  imports: [FormsModule, ReactiveFormsModule, NgForOf],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })

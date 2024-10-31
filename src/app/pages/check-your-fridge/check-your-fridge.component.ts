@@ -14,9 +14,7 @@ export class CheckYourFridgeComponent implements OnInit{
   deepJungleGreenText: string = StyleComponent.deepJungleGreenText();
   contentFridge: string='';
 
-  addIngredient() {
-    console.log('addIngredient');
-  }
+  addIngredient() {}
 
   ngOnInit(): void {
 

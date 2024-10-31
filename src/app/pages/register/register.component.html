@@ -5,29 +5,30 @@
           Create an account
         </h1>
         <form class="space-y-4 md:space-y-6" [formGroup]="form" (ngSubmit)="handleSubmit()" >
+
           <div>
-            <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Your firstname</label>
-            <input type="text" name="firstname" id="firstname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
-      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="firstname" required="">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Your name</label>
+            <input type="text" formControlName="name" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name" required="">
           </div>
           <div>
-            <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Your lastname</label>
-            <input type="text" name="lastname" id="lastname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
-      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="lastname" required="">
+            <label for="surname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Your surname</label>
+            <input type="text" formControlName="surname" id="surname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
+      dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="surname" required="">
           </div>
           <div>
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Your email</label>
-            <input type="email" name="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
+            <input type="email" formControlName="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
       dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@company.com" required="">
           </div>
           <div>
             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Password</label>
-            <input type="password" name="password" id="password" placeholder="••••••••" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
+            <input type="password" formControlName="password" id="password" placeholder="••••••••" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
       dark:focus:border-blue-500 dark:shadow-sm-light" required="">
           </div>
           <div>
             <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-[#005756]">Confirm password</label>
-            <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
+            <input type="password" formControlName="confirm-password" id="confirm-password" placeholder="••••••••" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#D9D9D980] dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500
       dark:focus:border-blue-500 dark:shadow-sm-light" required="">
           </div>
           <div class="flex items-start">

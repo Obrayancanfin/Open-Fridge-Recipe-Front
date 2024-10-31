@@ -110,7 +110,6 @@ export class RecipesComponent implements OnInit {
           this.listOfRecipes.push(datum)
       }
     })
-    console.log(this.listOfRecipes)
   }
 }
 
